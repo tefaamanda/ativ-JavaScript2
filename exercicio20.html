@@ -12,9 +12,9 @@
         var maiorAbono = 0;
         while (true) {
             var salario = parseFloat(prompt("Salário:"));
-            if (salario === 0) break; // Encerra a entrada de dados
-            var abono = salario * 0.20; // Calcula o abono como 20% do salário
-            abono = Math.max(abono, 100); // Aplica o piso mínimo de R$ 100
+            if (salario === 0) break; 
+            var abono = salario * 0.20; 
+            abono = Math.max(abono, 100); 
             salarios.push(salario);
             abonos.push(abono);
             totalFuncionarios++;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Exercício 23</title>
     <script>
-        var data = `
+        var informacao = `
         alexandre 456123789
         anderson 1245698456
         antonio 123456456
@@ -12,33 +12,33 @@
         cesar 987458
         rosemary 789456125
         `;
-        var lines = data.trim().split('\n');
-        var users = [];
-        var totalSpace = 0;
-        for (var i = 0; i < lines.length; i++) {
-            var line = lines[i].trim();
-            var parts = line.split(/\s+/);
-            var name = parts[0].trim();
-            var space = parseInt(parts[1], 10);
-            users.push({
-                name: name,
-                space: space
+        var linhas = informacao.trim().split('\n');
+        var usuarios = [];
+        var espacoTotal = 0;
+        for (var i = 0; i < linhas.length; i++) {
+            var linha = linhas[i].trim();
+            var partes = linha.split(/\s+/);
+            var nome = partes[0].trim();
+            var espaco = parseInt(partes[1], 10);
+            usuarios.push({
+                nome: nome,
+                espaco: espaco
             });
-            totalSpace += space;
+            espacoTotal += espaco;
         }
-        var report = 'ACME Inc. Uso do espaço em disco pelos usuários\n';
-        report += '------------------------------------------------------------------------\n';
+        var relatorio = 'ACME Inc. Uso do espaço em disco pelos usuários\n';
+        relatorio += '------------------------------------------------------------------------\n';
 
-        for (var i = 0; i < users.length; i++) {
-            var user = users[i];
-            var spaceMB = (user.space / (1024 * 1024)).toFixed(2);
-            var percentage = ((user.space / totalSpace) * 100).toFixed(2);
-            report += (i + 1) + ' ' + user.name.padEnd(15) + ' ' + spaceMB.padStart(10) + ' MB ' + percentage.padStart(6) + '%\n';
+        for (var i = 0; i < usuarios.length; i++) {
+            var usuario = usuarios[i];
+            var espacoMB = (usuario.espaco / (1024 * 1024)).toFixed(2);
+            var porcentagem = ((usuario.espaco / espacoTotal) * 100).toFixed(2);
+            relatorio += (i + 1) + ' ' + usuario.nome.padEnd(15) + ' ' + espacoMB.padStart(10) + ' MB ' + porcentagem.padStart(6) + '%\n';
         }
-        var averageSpace = (totalSpace / users.length / (1024 * 1024)).toFixed(2);
-        report += 'Espaço total ocupado: ' + (totalSpace / (1024 * 1024)).toFixed(2) + ' MB\n';
-        report += 'Espaço médio ocupado: ' + averageSpace + ' MB\n';
-        alert(report);
+        var espacoMedio = (espacoTotal / usuarios.length / (1024 * 1024)).toFixed(2);
+        relatorio += 'Espaço total ocupado: ' + (espacoTotal / (1024 * 1024)).toFixed(2) + ' MB\n';
+        relatorio += 'Espaço médio ocupado: ' + espacoMedio + ' MB\n';
+        alert(relatorio);
     </script>
 </head>
 <body>

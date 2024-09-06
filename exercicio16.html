@@ -15,7 +15,7 @@
             var salario = salarioBase + comissao;
             var faixa;
             if (salario < 200) {
-                faixa = -1; // Para salários abaixo de $200
+                faixa = -1;
             } else {
                 faixa = Math.min(Math.floor((salario - 200) / 100), 8);
             }

@@ -7,7 +7,6 @@
         var numeros = [10, 23, 35, 47, 50, 62, 74, 88, 92, 100, 101, 112, 123, 135, 147, 158, 164, 177, 186, 199];
         var pares = [];
         var impares = [];
-
         for (var fator = 0; fator < numeros.length; fator++) {
             var numero = numeros[fator];
             if (numero % 2 === 0) {
@@ -16,7 +15,6 @@
                 impares.push(numero);
             }
         }
-
         alert("Lista de números: " + numeros.join(", "));
         alert("Lista de números pares: " + pares.join(", "));
         alert("Lista de números ímpares: " + impares.join(", "));
