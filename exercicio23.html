@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 23</title>
+    <script>
+        var data = `
+        alexandre 456123789
+        anderson 1245698456
+        antonio 123456456
+        carlos 91257581
+        cesar 987458
+        rosemary 789456125
+        `;
+        var lines = data.trim().split('\n');
+        var users = [];
+        var totalSpace = 0;
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            var parts = line.split(/\s+/);
+            var name = parts[0].trim();
+            var space = parseInt(parts[1], 10);
+            users.push({
+                name: name,
+                space: space
+            });
+            totalSpace += space;
+        }
+        var report = 'ACME Inc. Uso do espaço em disco pelos usuários\n';
+        report += '------------------------------------------------------------------------\n';
+
+        for (var i = 0; i < users.length; i++) {
+            var user = users[i];
+            var spaceMB = (user.space / (1024 * 1024)).toFixed(2);
+            var percentage = ((user.space / totalSpace) * 100).toFixed(2);
+            report += (i + 1) + ' ' + user.name.padEnd(15) + ' ' + spaceMB.padStart(10) + ' MB ' + percentage.padStart(6) + '%\n';
+        }
+        var averageSpace = (totalSpace / users.length / (1024 * 1024)).toFixed(2);
+        report += 'Espaço total ocupado: ' + (totalSpace / (1024 * 1024)).toFixed(2) + ' MB\n';
+        report += 'Espaço médio ocupado: ' + averageSpace + ' MB\n';
+        alert(report);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

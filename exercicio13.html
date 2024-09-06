@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 13</title>
+    <script>
+        var temperaturas = [];
+        var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                     "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        for (var i = 0; i < 12; i++) {
+            var temperatura = parseFloat(prompt("Digite a temperatura média de " + meses[i] + ":"));
+            temperaturas.push(temperatura);
+        }
+        var somaTemperaturas = 0;
+        for (var i = 0; i < temperaturas.length; i++) {
+            somaTemperaturas += temperaturas[i];
+        }
+        var mediaAnual = somaTemperaturas / temperaturas.length;
+        var resultado = "Temperaturas acima da média anual:\n";
+        for (var i = 0; i < temperaturas.length; i++) {
+            if (temperaturas[i] > mediaAnual) {
+                resultado += meses[i] + ": " + temperaturas[i] + "°C\n";
+            }
+        }
+        alert(resultado);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

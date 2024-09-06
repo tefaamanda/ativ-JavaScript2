@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 15</title>
+    <script>
+        var notas = [];
+        var nota;
+        while (true) {
+            nota = parseFloat(prompt("Digite uma nota (ou -1 para encerrar):"));
+            if (isNaN(nota)) {
+                alert("Por favor, digite um número válido.");
+                continue;
+            }
+            if (nota === -1) {
+                break;
+            }
+            notas.push(nota);
+        }
+        var quantidade = notas.length;
+        alert("Quantidade de valores lidos: " + quantidade);
+        alert("Valores na ordem informada: " + notas.join(", "));
+        var valoresInvertidos = notas.slice().reverse();
+        alert("Valores na ordem inversa:\n" + valoresInvertidos.join("\n"));
+        var soma = 0;
+        for (var i = 0; i < notas.length; i++) {
+            soma += notas[i];
+        }
+        var media = notas.length > 0 ? soma / notas.length : 0; // Verifica se a lista não está vazia
+        alert("Soma dos valores: " + soma);
+        alert("Média dos valores: " + media);
+        var quantidadeAcimaMedia = 0;
+        for (var i = 0; i < notas.length; i++) {
+            if (notas[i] > media) {
+                quantidadeAcimaMedia++;
+            }
+        }
+        alert("Quantidade de valores acima da média: " + quantidadeAcimaMedia);
+
+        var quantidadeAbaixoSete = 0;
+        for (var i = 0; i < notas.length; i++) {
+            if (notas[i] < 7) {
+                quantidadeAbaixoSete++;
+            }
+        }
+        alert("Quantidade de valores abaixo de sete: " + quantidadeAbaixoSete);
+        alert("Programa encerrado. Obrigado por utilizar!");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

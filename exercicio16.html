@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 16</title>
+    <script>
+        var faixas = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var vendasBrutas = [];
+        var venda;
+        while (true) {
+            venda = parseFloat(prompt("Digite as vendas brutas do vendedor (ou -1 para encerrar):"));
+            if (venda === -1) break;
+                var salarioBase = 200;
+            var comissao = 0.09 * venda;
+            var salario = salarioBase + comissao;
+            var faixa;
+            if (salario < 200) {
+                faixa = -1; // Para salários abaixo de $200
+            } else {
+                faixa = Math.min(Math.floor((salario - 200) / 100), 8);
+            }
+            if (faixa >= 0) faixas[faixa]++;
+        }
+        alert("Número de vendedores em cada faixa salarial:");
+        alert("200 - 299: " + faixas[0]);
+        alert("300 - 399: " + faixas[1]);
+        alert("400 - 499: " + faixas[2]);
+        alert("500 - 599: " + faixas[3]);
+        alert("600 - 699: " + faixas[4]);
+        alert("700 - 799: " + faixas[5]);
+        alert("800 - 899: " + faixas[6]);
+        alert("900 - 999: " + faixas[7]);
+        alert("1000 em diante: " + faixas[8]);
+        alert("Programa encerrado. Obrigado por utilizar!");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

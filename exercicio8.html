@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 8</title>
+    <script>
+        var idades = [];
+        var alturas = [];
+        for (var i = 0; i < 5; i++) {
+            var idade = parseInt(prompt("Insira a idade da pessoa " + (i + 1) + ":"));
+            var altura = parseFloat(prompt("Insira a altura da pessoa " + (i + 1) + " (em metros):"));
+            idades.push(idade);
+            alturas.push(altura);
+        }
+        var idadeInversa = idades.slice().reverse();
+        var alturaInversa = alturas.slice().reverse();
+        alert("Idades na ordem inversa: " + idadeInversa.join(", "));
+        alert("Alturas na ordem inversa: " + alturaInversa.join(", "));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 17</title>
+    <script>
+       while (true) {
+    var nome = prompt("Digite o nome do atleta (ou pressione Enter para encerrar):");
+    if (nome === "") break;
+    var saltos = [];
+        for (var i = 1; i <= 5; i++) {
+        var salto = parseFloat(prompt("Digite a distância do " + i + "º salto em metros:"));
+        saltos.push(salto);
+    }
+    var soma = 0;
+    for (var i = 0; i < saltos.length; i++) {
+        soma += saltos[i];
+    }
+    var media = soma / saltos.length;
+        var saltosFormatados = saltos.map(function(salto, index) {
+        return (index + 1) + "º Salto: " + salto.toFixed(1) + " m";
+    }).join("\n");
+    var saltosResumo = saltos.join(" - ");
+    alert("Atleta: " + nome + "\n" + saltosFormatados + "\n\nResultado final:\nAtleta: " + nome + "\nSaltos: " + saltosResumo + "\nMédia dos saltos: " + media.toFixed(1) + " m");
+}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 11</title>
+    <script>
+        var vetor1 = [];
+        var vetor2 = [];
+        var vetor3 = [];
+        var vetorIntercalado = [];
+        for (var i = 0; i < 10; i++) {
+            var numero = parseInt(prompt("Insira o número " + (i + 1) + " para o primeiro vetor:"));
+            vetor1.push(numero);
+        }
+        for (var i = 0; i < 10; i++) {
+            var numero = parseInt(prompt("Insira o número " + (i + 1) + " para o segundo vetor:"));
+            vetor2.push(numero);
+        }
+
+        for (var i = 0; i < 10; i++) {
+            var numero = parseInt(prompt("Insira o número " + (i + 1) + " para o terceiro vetor:"));
+            vetor3.push(numero);
+        }
+        for (var i = 0; i < 10; i++) {
+            vetorIntercalado.push(vetor1[i]);
+            vetorIntercalado.push(vetor2[i]);
+            vetorIntercalado.push(vetor3[i]);
+        }
+        alert("Vetor intercalado: " + vetorIntercalado.join(", "));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

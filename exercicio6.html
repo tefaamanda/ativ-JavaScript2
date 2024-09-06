@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 6</title>
+    <script>
+        var medias = [];
+        for (var i = 0; i < 10; i++) {
+            var alunoNotas = [];
+            for (var j = 0; j < 4; j++) {
+                var nota = parseFloat(prompt("Digite a nota " + (j + 1) + " do aluno " + (i + 1) + ":"));
+                alunoNotas.push(nota);
+            }
+            var media = (alunoNotas[0] + alunoNotas[1] + alunoNotas[2] + alunoNotas[3]) / 4;
+            medias.push(media);
+        }
+        var count = 0;
+        for (var i = 0; i < medias.length; i++) {
+            if (medias[i] >= 7.0) {
+                count++;
+            }
+        }
+        alert("Número de alunos com média maior ou igual a 7.0: " + count);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

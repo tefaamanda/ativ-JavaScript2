@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 24</title>
+    <script>
+        var contadores = [0, 0, 0, 0, 0, 0];
+        for (var i = 0; i < 100; i++) {
+            var lancamento = Math.floor(Math.random() * 6) + 1;
+            contadores[lancamento - 1]++;
+        }
+        var resultado = 'Resultados dos lançamentos do dado:\n\n';
+        for (var j = 0; j < contadores.length; j++) {
+            resultado += 'Número ' + (j + 1) + ': ' + contadores[j] + ' vez(es)\n';
+        }
+        alert(resultado);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

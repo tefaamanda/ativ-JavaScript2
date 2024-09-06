@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 18</title>
+    <script>
+        var votos = [];
+        for (var i = 0; i < 24; i++) {
+            votos[i] = 0;
+        }
+        var totalVotos = 0;
+        while (true) {
+            var numero = parseInt(prompt("Número do jogador (0=fim):"));
+            if (numero === 0) break;
+            if (numero < 1 || numero > 23) {
+                alert("Informe um valor entre 1 e 23 ou 0 para sair!");
+                continue;
+            }
+            votos[numero]++;
+            totalVotos++;
+        }
+        var jogadorMelhor = 0;
+        var maxVotos = 0;
+        var resultado = "Resultado da votação:\n";
+        resultado += "Foram computados " + totalVotos + " votos.\n";
+        for (var i = 1; i <= 23; i++) {
+            if (votos[i] > 0) {
+                var percentual = (votos[i] / totalVotos * 100).toFixed(1);
+                resultado += "Jogador " + i + " " + votos[i] + " " + percentual + "%\n";
+                if (votos[i] > maxVotos) {
+                    jogadorMelhor = i;
+                    maxVotos = votos[i];
+                }
+            }
+        }
+        var percentualMelhor = (maxVotos / totalVotos * 100).toFixed(1);
+        resultado += "O melhor jogador foi o número " + jogadorMelhor + ", com " + maxVotos + " votos, correspondendo a " + percentualMelhor + "% do total de votos.";
+        alert(resultado);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

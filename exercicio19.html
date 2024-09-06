@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 19</title>
+    <script>
+        var votos = [0, 0, 0, 0, 0, 0, 0];
+        var totalVotos = 0;
+        while (true) {
+            var resposta = parseInt(prompt("Qual o melhor Sistema Operacional para uso em servidores?\n1- Windows Server\n2- Unix\n3- Linux\n4- Netware\n5- Mac OS\n6- Outro\n0- Finalizar"));
+            if (resposta === 0) break;
+            if (resposta < 0 || resposta > 6) {
+                alert("Resposta inválida! Informe um valor entre 0 e 6.");
+                continue; // Ignora respostas inválidas
+            }
+            votos[resposta]++;
+            totalVotos++;
+        }
+        var sistemas = ["Windows Server", "Unix", "Linux", "Netware", "Mac OS", "Outro"];
+        var maxVotos = 0;
+        var sistemaVencedor = 0;
+        var resultado = "Sistema Operacional Votos %\n";
+        resultado += "------------------- ----- -----\n";
+        for (var i = 1; i <= 6; i++) {
+            var percentual = (votos[i] / totalVotos * 100).toFixed(1);
+            resultado += sistemas[i - 1] + " " + votos[i].toString().padStart(5) + " " + percentual + "%\n";
+            if (votos[i] > maxVotos) {
+                maxVotos = votos[i];
+                sistemaVencedor = i;
+            }
+        }
+        resultado += "------------------- ----- -----\n";
+        resultado += "Total " + totalVotos.toString().padStart(5) + "\n";
+        var percentualVencedor = (maxVotos / totalVotos * 100).toFixed(1);
+        resultado += "O Sistema Operacional mais votado foi o " + sistemas[sistemaVencedor - 1] + ", com " + maxVotos + " votos, correspondendo a " + percentualVencedor + "% dos votos.";
+        alert(resultado);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

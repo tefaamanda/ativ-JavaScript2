@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 21</title>
+    <script>
+        var modelos = ['Fusca', 'Gol', 'Uno', 'Vectra', 'Peugeot'];
+        var consumos = [7, 10, 12.5, 9, 14.5];
+        var precoGasolina = 2.25;
+        var distancia = 1000;
+        var modeloMaisEconomico = '';
+        var consumoMaisEficiente = Infinity;
+        var relatorios = [];
+        for (var i = 0; i < modelos.length; i++) {
+            var modelo = modelos[i];
+            var consumo = consumos[i];
+            var litros = distancia / consumo;
+            var custo = litros * precoGasolina;
+            if (consumo < consumoMaisEficiente) {
+                consumoMaisEficiente = consumo;
+                modeloMaisEconomico = modelo;
+            }
+            relatorios.push((i + 1) + ' - ' + modelo.toLowerCase() + ' - ' + consumo.toFixed(1) + ' - ' + litros.toFixed(1) + ' litros - R$ ' + custo.toFixed(2));
+        }
+        var resultado = 'Comparativo de Consumo de Combustível\n';
+        resultado += 'Relatório Final\n';
+        resultado += relatorios.join('\n') + '\n';
+        resultado += 'O menor consumo é do ' + modeloMaisEconomico.toLowerCase() + '.';
+        alert(resultado);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

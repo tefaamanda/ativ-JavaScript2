@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4</title>
+    <script>
+        var caracteres = ['a', 'b', 'c', 'd', 'e', 'g', 's', 'u', 'w', 'z']
+        var vogais = ['a', 'e', 'i', 'o', 'u']
+        var count = 0
+
+        while (count < 5) {
+            var index = caracteres.indexOf(vogais[count])
+            if (index !== -1) {
+                caracteres.splice(index, 1)
+            }
+            count++
+        }
+
+        alert("Existem " + caracteres.length + " consoantes")
+        alert(caracteres)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 9</title>
+    <script>
+        var numeros = [];
+        var somaQuadrados = 0;
+        for (var i = 0; i < 10; i++) {
+            var numero = parseInt(prompt("Insira o número " + (i + 1) + ":"));
+            numeros.push(numero);
+        }
+        for (var i = 0; i < numeros.length; i++) {
+            somaQuadrados += numeros[i] * numeros[i];
+        }
+        alert("A soma dos quadrados dos números é: " + somaQuadrados);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

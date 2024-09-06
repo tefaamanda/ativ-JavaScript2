@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 22</title>
+    <script>
+        var quantidadeMouses = 0;
+        var necessidadeEsfera = 0;
+        var necessidadeLimpeza = 0;
+        var necessidadeCabo = 0;
+        var quebrado = 0;
+        while (true) {
+            var idMouse = prompt("Digite o número de identificação do mouse (0 para encerrar):");
+            idMouse = parseInt(idMouse);
+            if (idMouse === 0) {
+                break;
+            }
+            var tipoDefeito = prompt("Digite o tipo de defeito:\n1 - necessita da esfera\n2 - necessita de limpeza\n3 - necessita troca do cabo ou conector\n4 - quebrado ou inutilizado");
+            tipoDefeito = parseInt(tipoDefeito);
+            if (tipoDefeito === 1) {
+                necessidadeEsfera++;
+            } else if (tipoDefeito === 2) {
+                necessidadeLimpeza++;
+            } else if (tipoDefeito === 3) {
+                necessidadeCabo++;
+            } else if (tipoDefeito === 4) {
+                quebrado++;
+            } else {
+                alert("Tipo de defeito inválido! Digite um valor entre 1 e 4.");
+                continue;
+            }
+            quantidadeMouses++;
+        }
+        var percentualEsfera = (necessidadeEsfera / quantidadeMouses * 100).toFixed(2);
+        var percentualLimpeza = (necessidadeLimpeza / quantidadeMouses * 100).toFixed(2);
+        var percentualCabo = (necessidadeCabo / quantidadeMouses * 100).toFixed(2);
+        var percentualQuebrado = (quebrado / quantidadeMouses * 100).toFixed(2);
+        var relatorio = "Quantidade de mouses: " + quantidadeMouses + "\n";
+        relatorio += "Situação                Quantidade   Percentual\n";
+        relatorio += "1- necessita da esfera       " + necessidadeEsfera + "           " + percentualEsfera + "%\n";
+        relatorio += "2- necessita de limpeza     " + necessidadeLimpeza + "           " + percentualLimpeza + "%\n";
+        relatorio += "3- necessita troca do cabo ou conector " + necessidadeCabo + "           " + percentualCabo + "%\n";
+        relatorio += "4- quebrado ou inutilizado   " + quebrado + "           " + percentualQuebrado + "%\n";
+        alert(relatorio);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
